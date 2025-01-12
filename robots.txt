@@ -1,42 +1,25 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
 Disallow: /private/
+Disallow: /temp/
+Disallow: /admin/
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
-
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
+Allow: /sitemap.xml
 Allow: /images/
+Allow: /
 
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
+Sitemap: https://clairvoyancemedium.github.io/Hochwertige-Wahrsagung-per-E-Mail-Zuverlassig-und-Schnell.github.io/sitemap.xml
 
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
+# Directives supplémentaires pour optimiser le crawl
+Crawl-delay: 5
 
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
+# Empêcher les moteurs de recherche d'indexer les paramètres spécifiques
+Disallow: /*?session=
+Disallow: /*?tracking=
+Disallow: /*.php$
+
+# Autoriser les principaux moteurs
 User-agent: Googlebot
 Allow: /
-User-agent: AdsBot-Google
-Allow: /
+
 User-agent: Bingbot
 Allow: /
-
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
-Disallow: /
-
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
